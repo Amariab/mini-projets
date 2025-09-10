@@ -1,0 +1,29 @@
+.container {
+  display: grid; /* active le mode grille */
+  grid-template-columns: 200px 1fr 200px; /* 3 colonnes : fixe, flexible, fixe */
+  grid-template-rows: auto auto; /* 2 lignes avec hauteur auto */
+  gap: 10px; /* espace entre les cases */
+}
+
+.container2 {
+  display: grid; /* active la grille */
+  
+  /* On définit 2 colonnes : 200px pour le menu + le reste pour le contenu */
+  grid-template-columns: 200px 1fr;
+  
+  /* On définit 3 lignes : header, contenu, footer */
+  grid-template-rows: 60px 1fr 40px;
+  
+  /* On place les zones avec des noms */
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  
+  gap: 10px; /* espace entre les cases */
+}
+
+.header  { grid-area: header;  background: lightblue; }
+.menu    { grid-area: menu;    background: lightgreen; }
+.content { grid-area: content; background: lightyellow; }
+.footer  { grid-area: footer;  background: lightcoral; }

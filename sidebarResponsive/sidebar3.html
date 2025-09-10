@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sidebar Responsive sans JS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* HAMBURGER BUTTON (mobile only) */
+    #menu-toggle {
+      display: none;
+    }
+
+    .hamburger-label {
+      display: none;
+      font-size: 28px;
+      padding: 16px;
+      background-color: #2c3e50;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* SIDEBAR DESKTOP */
+    .sidebar-desktop {
+      width: 250px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      display: none;
+    }
+
+    /* SIDEBAR MOBILE */
+    .sidebar-mobile {
+      background-color: #34495e;
+      color: white;
+      padding: 20px;
+      display: none;
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+      padding: 20px;
+    }
+
+    /* DESKTOP STYLES */
+    @media (min-width: 768px) {
+      body {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .sidebar-desktop {
+        display: block;
+      }
+
+      .hamburger-label,
+      .sidebar-mobile {
+        display: none;
+      }
+
+      .main-content {
+        flex: 1;
+      }
+    }
+
+    /* MOBILE STYLES */
+    @media (max-width: 767px) {
+      .hamburger-label {
+        display: block;
+        width: 100%;
+      }
+
+      #menu-toggle:checked + .hamburger-label + .sidebar-mobile {
+        display: block;
+        animation: slideDown 0.3s ease;
+      }
+
+      .main-content {
+        padding: 20px;
+      }
+    }
+
+    /* SIMPLE ANIMATION */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HAMBURGER + SIDEBAR MOBILE -->
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger-label">☰ Menu</label>
+
+  <aside class="sidebar-mobile">
+    <h2>Menu Mobile</h2>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="#">Paramètres</a></li>
+    </ul>
+  </aside>
+
+  <!-- SIDEBAR DESKTOP -->
+  <aside class="sidebar-desktop">
+    <h2>Menu Desktop</h2>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="#">Paramètres</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <h1>Bienvenue !</h1>
+    <p>Ceci est le contenu principal de la page.</p>
+  </main>
+
+</body>
+</html>

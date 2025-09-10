@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemple Variables CSS</title>
+    <meta name="description" content="Les sélecteurs :root et body dans CSS">
+
+  <style>
+    /* Définition des variables globales */
+    :root {
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --accent: #0b78d1;
+      --text: #1b1b1b;
+      --muted: #6b7280;
+      --footer-height: 64px;
+      --max-width: 1000px;
+    }
+
+    /* Styles généraux */
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--accent);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: var(--card);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    footer {
+      background-color: var(--accent);
+      color: white;
+      height: var(--footer-height);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bienvenue sur ma page</h1>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Carte 1</h2>
+      <p>Voici un exemple de texte secondaire avec la couleur muted.</p>
+      <a href="#">Lien accentué</a>
+    </div>
+
+    <div class="card">
+      <h2>Carte 2</h2>
+      <p>Autre exemple de carte pour voir la cohérence des styles.</p>
+      <a href="#">Lien accentué</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Mon Site
+  </footer>
+
+</body>
+</html>

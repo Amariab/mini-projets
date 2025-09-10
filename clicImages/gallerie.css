@@ -1,0 +1,16 @@
+
+        .gallerie {
+            display: flex; /* pour aligner les images horizontalement */
+            gap: 15px; /* espace entre les images */
+            flex-wrap: wrap; :/* pour permettre le retour à la ligne si nécessaire */
+        }
+        .gallerie a img {
+            width: 200px;
+            height: auto;
+            border: 5px solid green;
+            transition: 0.3s;
+        }
+        .gallerie a img:hover {
+            border-color: red;
+        }
+   

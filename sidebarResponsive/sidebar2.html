@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sidebar Responsive avec Menu Mobile et du js</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* Bouton hamburger */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      padding: 16px;
+      cursor: pointer;
+      color: white;
+      background-color: #2c3e50;
+      width: 100%;
+      text-align: left;
+    }
+
+    /* Sidebar de bureau */
+    .sidebar-desktop {
+      width: 250px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      display: none;
+    }
+
+    /* Sidebar mobile */
+    .sidebar-mobile {
+      background-color: #34495e;
+      color: white;
+      padding: 20px;
+      display: none;
+    }
+
+    /* Contenu principal */
+    .main-content {
+      padding: 20px;
+    }
+
+    /* Affichage sur desktop */
+    @media (min-width: 768px) {
+      body {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .sidebar-desktop {
+        display: block;
+      }
+
+      .hamburger,
+      .sidebar-mobile {
+        display: none;
+      }
+
+      .main-content {
+        flex: 1;
+      }
+    }
+
+    /* Affichage sur mobile */
+    @media (max-width: 767px) {
+      .hamburger {
+        display: block;
+      }
+
+      .main-content {
+        padding: 20px;
+      }
+    }
+
+    /* Animation / transition */
+    /* pour faire apparaître la sidebar mobile */
+    .sidebar-mobile.show {
+      display: block; /* visible quand la classe 'show' est ajoutée */
+      animation: slideDown 0.3s ease; /* animation pour l'apparition de la sidebar */
+        /* ease pour une transition douce */
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bouton hamburger visible uniquement sur mobile -->
+  <button class="hamburger" onclick="toggleSidebar()">☰ Menu</button>
+
+  <!-- Sidebar pour bureau -->
+  <aside class="sidebar-desktop">
+    <h2>Menu Desktop</h2>
+    <ul>
+      <li>Accueil</li>
+      <li>Profil</li>
+      <li>Paramètres</li>
+    </ul>
+  </aside>
+
+  <!-- Sidebar pour mobile -->
+  <aside class="sidebar-mobile" id="mobileSidebar">
+    <h2>Menu Mobile</h2>
+    <ul>
+      <li>Accueil</li>
+      <li>Profil</li>
+      <li>Paramètres</li>
+    </ul>
+  </aside>
+
+  <!-- Contenu principal -->
+  <main class="main-content">
+    <h1>Bienvenue !</h1>
+    <p>Ceci est le contenu principal de la page.</p>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('mobileSidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

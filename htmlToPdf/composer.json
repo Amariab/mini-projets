@@ -1,0 +1,10 @@
+{
+    "name": "amariab/html-to-pdf",
+    "description": "Génération de factures PDF avec DomPDF dans CodeIgniter 4",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    }
+}

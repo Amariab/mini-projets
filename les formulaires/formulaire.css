@@ -1,0 +1,104 @@
+label {
+    width: 20%;
+    display: inline-block;
+    /*Pour que le label prenne 20% de la largeur du conteneur*/
+    text-align: left;
+    /*Pour que le texte soit aligné à gauche*/
+}
+
+body {
+    width: 50%;
+    font-family: 'arial', sans-serif;
+    /*Police de caractères pour le corps du document*/
+    margin: 5px auto;
+    /*Pour centrer le corps du document horizontalement*/
+    background-color: #f4f7f8;
+    /*Couleur de fond du corps du document*/
+    padding: 20px;
+    /*Pour ajouter un espacement intérieur de 20 pixels*/
+    color: #1ab
+}
+
+fieldset {
+    border-radius: 8px;
+    /*Pour arrondir les coins du champ de saisie*/
+    border: 2px solid #1b650a;
+    /*Pour ajouter une bordure grise autour du champ de saisie*/
+    
+
+}
+
+legend {
+    font-size: 1.4em;
+    /*Pour rendre le texte de la légende en gras*/
+    margin-bottom: 10px;
+    /*Pour ajouter un espacement en dessous de la légende*/
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    border-radius: 5px;
+    /*Pour arrondir les coins des champs de saisie*/
+    padding: 10px;
+    /*Pour ajouter un espacement intérieur de 10 pixels*/
+    width: 60%;
+    /*Pour que les champs de saisie prennent 60% de la largeur du conteneur*/
+    background-color: #ffffff;
+    /*Couleur de fond des champs de saisie*/
+    margin: 10px;
+    /*Pour ajouter un espacement de 10 pixels autour des champs de saisie*/
+}
+
+input[type="submit"] {
+    position: relative;
+    /*Pour positionner le bouton d'envoi par rapport à son conteneur*/
+    padding: 20px;
+    /*Pour ajouter un espacement intérieur de 20 pixels*/
+    font-size: 18px;
+    /*Pour augmenter la taille de la police du bouton d'envoi*/
+    border: 1px solid #1b650a;
+    /*Pour ajouter une bordure grise autour du bouton d'envoi*/
+    border-radius: 5px;
+    /*Pour arrondir les coins du bouton d'envoi*/
+    margin-top: 10px; /*Pour ajouter un espacement de 10 pixels au-dessus du bouton d'envoi*/
+    width: 100%;/*Pour que le bouton d'envoi prenne 100% de la largeur du conteneur*/
+}
+
+/* Styles pour le conteneur de la liste (ul) */
+ul {
+    list-style-type: none; /* Supprime les puces de la liste */
+    padding: 0; /* Supprime le padding par défaut du navigateur */
+    margin-bottom: 10px; /* Supprime la marge par défaut du navigateur */
+    background-color: #235323; /* Couleur de fond de la barre de navigation */
+
+
+    /* --- NOUVEAUTÉS FLEXBOX --- */
+    display: flex; /* Active Flexbox pour les éléments enfants (<li>) */
+    justify-content: space-around; /* Distribue l'espace également entre les éléments */
+    align-items: center; /* Centre les éléments verticalement (si la nav avait une hauteur définie) */
+    /* --- FIN NOUVEAUTÉS FLEXBOX --- */
+}
+
+/* Styles pour les éléments de la liste (li) */
+/* Les règles pour li ne sont pas nécessaires ici car elles sont gérées ailleurs */
+
+/* Styles pour les liens (a) à l'intérieur des li */
+li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #ffffff; /* Couleur du texte des liens */
+    font-size: 20px;
+
+    /* --- NOUVEAUTÉS --- */
+    display: block; /* Rend les liens comme des blocs pour mieux contrôler le padding */
+    padding: 15px 20px; /* Ajuste le padding pour un bon espacement (haut/bas, gauche/droite) */
+    /* margin: 0; */ /* Supprime la marge des liens pour éviter les chevauchements */
+    /* --- FIN NOUVEAUTÉS --- */
+}
+
+/* (Optionnel) Ajout d'un effet au survol */
+li a:hover {
+    background-color: #3b763b; /* Couleur de fond au survol */
+}
+

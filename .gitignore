@@ -1,0 +1,6 @@
+# Ignore les variables d'environnement
+.env
+
+# Ignore le dossier des dépendances de Stripe
+/Paiements/vendor/
+

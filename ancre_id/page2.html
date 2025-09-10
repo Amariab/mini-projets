@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 2</title>
+  <style>
+    body {
+      height: 200vh; /* Pour permettre le scroll */
+    }
+    #ancre {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 100vh;
+      padding: 20px;
+      background-color: lightblue;
+      cursor: pointer;
+      border: 2px dashed #333;
+      font-size: 20px;
+      color: #000;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Page 2</h1>
+
+  <div id="ancre" onclick="if (document.referrer) { history.back(); } 
+  else { window.location.href='page1.html'; }">
+    <!-- Pas le mot 'retour', mais visible et cliquable -->
+    🔙
+  </div>
+</body>
+</html>

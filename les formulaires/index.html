@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulaire.css">
+    <title>Formulaire d'Inscription</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form action="insert.php" method="GET"> 
+        <fieldset>
+            <legend>Inscription</legend>
+
+            <div>
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Veuillez saisir votre nom" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Veuillez saisir votre prénom" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="telephone">Téléphone</label>
+                <input type="number" id="telephone" name="telephone" placeholder="Veuillez saisir votre numéro de téléphone" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Veuillez saisir votre adresse e-mail" required>
+            </div>
+            <br>
+
+            <div class="radio-group"> <label>Sexe:</label>
+                <label for="sexeHomme"><input type="radio" id="sexeHomme" name="sexe" value="homme" required> Homme</label>
+                <label for="sexeFemme"><input type="radio" id="sexeFemme" name="sexe" value="femme" required> Femme</label>
+            </div>
+
+            <br>
+
+            <input type="submit" value="Envoyer">
+        </fieldset>
+    </form>
+
+</body>
+</html>
