@@ -1,0 +1,20 @@
+/* 🌈 Style de base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-color: #f8f9fa;
+}
+
+/* Centrer le contenu et donner de l’espace */
+#editor {
+  height: 200px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+/* Zone de sortie du HTML */
+#output {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 6px;
+}

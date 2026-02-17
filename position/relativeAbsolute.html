@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="relativeAbsolute.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Positionnement absolu et relatif</h2>
+
+
+    <h3>Explication</h3>
+
+<h4>position: relative</h4>
+<p>
+La valeur <code>position: relative</code> permet à un élément de rester dans le flux normal du document.
+Cela signifie qu’il conserve sa place initiale, mais qu’il peut être déplacé
+à l’aide des propriétés <code>top</code>, <code>left</code>, <code>right</code> et <code>bottom</code>.
+Elle sert également de référence pour les éléments enfants en
+<code>position: absolute</code>.
+</p>
+
+<h4>position: absolute</h4>
+<p>
+La valeur <code>position: absolute</code> retire l’élément du flux normal du document.
+Il ne réserve donc plus d’espace. Il se positionne par rapport
+au premier parent qui possède une position différente de <code>static</code>.
+Si aucun parent n’est positionné, il se place alors par rapport à la page entière.
+</p>
+
+<p>
+Dans cet exemple, l’élément <code>.badge</code> se positionne dans le coin supérieur droit
+de l’élément <code>.box</code>.
+</p>
+
+
+    <p>Objectif : <br>
+        Positionner un élément par rapport à un autre.</p>
+
+    <div class="box">
+        Boîte parent
+        <div class="badge">Nouveau</div>
+    </div>
+
+
+</body>
+
+</html>

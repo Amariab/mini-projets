@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload d'images</title>
+</head>
+
+<body>
+
+    <h1>UPLOAD D'IMAGES</h1>
+
+    <!-- fichier : upload_form.html -->
+
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <!--
+    <form> : Balise qui définit un formulaire HTML.
+    - action="upload.php" → indique la page PHP qui va recevoir et traiter les données du formulaire (ici : upload.php).
+    - method="POST" → envoie les données de manière sécurisée (non visible dans l’URL).
+    - enctype="multipart/form-data" → OBLIGATOIRE pour permettre l’envoi de fichiers (images, PDF, etc.).
+    -->
+
+        <label for="image">Choisir une image :</label>
+        <!--
+    <label> : texte descriptif lié à un champ de formulaire.
+    - for="image" → relie ce label au champ dont l’attribut id est "image".
+    - Le texte "Choisir une image :" sera affiché à côté du champ de sélection du fichier.
+    -->
+
+        <input type="file" name="image" id="image" accept="image/*" required>
+        <!--
+    <input type="file"> : permet à l’utilisateur de sélectionner un fichier sur son ordinateur.
+    - name="image" → le nom de la variable qui sera envoyée à PHP ($_FILES['image']).
+    - id="image" → identifiant pour relier le champ au label ci-dessus.
+    - accept="image/*" → restreint la sélection aux fichiers de type image (jpg, png, gif, etc.).
+    - required → rend le champ obligatoire : le formulaire ne peut pas être envoyé sans fichier.
+    -->
+
+        <label for="nom_image">Nom de l'image :</label>
+        <input type="text" name="nom_image" id="nom_image" placeholder="Ex: garage" required>
+
+        <input type="text" name="annonce_id" placeholder="ID de l'annonce" required>
+        <!--
+    <input type="text"> : champ texte pour saisir l’ID de l’annonce liée à l’image.
+    - name="annonce_id" → le nom de la variable envoyée à PHP ($_POST['annonce_id']).
+    - placeholder="ID de l'annonce" → texte gris qui s’affiche à l’intérieur du champ pour indiquer ce qu’il faut saisir.
+    - required → champ obligatoire.
+    -->
+
+        <button type="submit">Uploader</button>
+        <!--
+    <button type="submit"> : bouton qui envoie le formulaire à la page définie dans "action" (upload.php).
+    Le texte "Uploader" s’affiche sur le bouton.
+    -->
+
+    </form>
+
+
+
+</body>
+
+</html>

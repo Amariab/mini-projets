@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Éditeur Quill.js - Projet Démo</title>
+
+    <!-- Import du style par défaut de Quill -->
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+
+    <!-- Feuille de style css personnalisée -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Petit projet avec Quill.js</h1>
+
+    <!-- Barre d'outils personnalisée -->
+    <div id="toolbar">
+      <button class="ql-bold"></button> <!-- bouton gras -->
+      <button class="ql-italic"></button> <!-- bouton italique -->
+      <button class="ql-underline"></button> <!-- souligné -->
+      <button class="ql-link"></button> <!-- ajout de lien -->
+      <button class="ql-list" value="ordered"></button> <!-- liste numérotée -->
+      <button class="ql-list" value="bullet"></button> <!-- liste à puces -->
+    </div>
+
+    <!-- Conteneur de l'éditeur -->
+    <div id="editor">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quae repellendus, ad, 
+        rem vitae ipsum eos, tenetur obcaecati minima iusto corporis sit! Reiciendis, 
+        mollitia earum delectus atque recusandae id dignissimos!</p>
+    </div>
+
+    <!-- Bouton pour récupérer le contenu -->
+    <button id="get-html">Afficher le HTML</button>
+
+    <!-- Zone où s’affichera le HTML -->
+    <pre id="output"></pre>
+
+    <!-- Script Quill -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <!-- Notre script -->
+    <script src="script.js"></script>
+  </body>
+</html>

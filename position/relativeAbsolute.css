@@ -1,0 +1,32 @@
+/*
+position: relative
+- L’élément reste dans le flux normal
+- On peut le déplacer avec top, left, right, bottom
+- Sert de référence pour les enfants en absolute
+
+position: absolute
+- Sort du flux normal
+- Se positionne par rapport au premier parent positionné
+- Si aucun parent n’est positionné → par rapport à la page
+
+Ici, .badge se place dans le coin supérieur droit de .box.
+*/
+
+
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  background: rgb(190, 246, 59);
+  padding: 20px;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgb(6, 191, 108);
+  color: rgb(192, 6, 34);
+  padding: 5px 10px;
+}

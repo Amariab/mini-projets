@@ -6,7 +6,6 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-
  $routes->get('/', 'FactureController::index');
 $routes->get('facture', 'FactureController::index');
 
