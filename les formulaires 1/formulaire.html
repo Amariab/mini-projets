@@ -23,12 +23,15 @@
         Un formulaire permet de récupérer des informations saisies par un utilisateur.
         Il est encadré par la balise <strong>&lt;form&gt;</strong>.
         Cette balise contient plusieurs champs de saisie appelés <strong>inputs</strong>.
+        Le label est utilisé pour décrire chaque champ et améliorer l’accessibilité.
     </p>
 
     <!-- Début du formulaire -->
-    <form method="get" action="">
+    <form method="post" 
+    action="resultat.html">
         <!-- 
             method="get" : les données sont envoyées dans l’URL
+            method="post" : les données sont envoyées dans le corps de la requête (plus sécurisé)
             action="" : page vers laquelle les données seront envoyées
         -->
 
@@ -43,7 +46,7 @@
                 <!-- for="prenom" relie le label à l'id du champ -->
 
                 <input type="text" name="prenom" id="prenom" placeholder="Ex : Mathieu" size="30" maxlength="20"
-                    required>
+                    required autofocus>
                 <!--
                     type="text" : champ texte simple
                     name : nom de la donnée envoyée
@@ -52,6 +55,7 @@
                     size : largeur approximative
                     maxlength : nombre maximum de caractères
                     required : champ obligatoire
+                    autofocus : place le curseur dans ce champ à l’ouverture de la page
                 -->
             </p>
 

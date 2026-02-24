@@ -26,12 +26,12 @@ STYLE DU FORMULAIRE
 */
 
 form {
-    background-color: white;       /* Fond blanc pour le formulaire */
+    background-color: rgb(150, 219, 66);       /* Fond vert clair pour le formulaire */
     padding: 20px;                 /* Espace intérieur */
     border-radius: 10px;           /* Coins arrondis */
     max-width: 600px;              /* Largeur maximale */
     margin: auto;                  /* Centre le formulaire */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Ombre légère */
+    box-shadow: 0 4px 10px rgba(86, 42, 181, 0.1); /* Ombre légère */
 }
 
 
@@ -42,16 +42,23 @@ GROUPES DE CHAMPS
 */
 
 fieldset {
-    border: 1px solid #ccc;
+    border: 1px solid #b70707;
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 15px;
 }
 
-/* Titre des groupes */
 legend {
-    font-weight: bold;
-    color: #3498db;
+    font-weight: bold;           /* Texte en gras */
+    color: #1fbeef;              /* Couleur du texte */
+    
+    border: 4px solid #34db7c;   /* Bordure autour du titre */
+    border-radius: 6px;          /* Coins arrondis */
+    
+    padding: 5px 10px;           /* Espace intérieur */
+    background-color: rgb(244, 164, 215);     /* Fond blanc */
+    
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Ombre légère */
 }
 
 
@@ -80,6 +87,10 @@ select {
 /* Style spécifique au textarea */
 textarea {
     resize: vertical; /* Permet seulement redimensionnement vertical */
+}
+
+:required {
+    background-color:#dff071;
 }
 
 /* 
