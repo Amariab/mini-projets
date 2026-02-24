@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprendre le z-index en CSS</title>
+    <link rel="stylesheet" href="zindex1.css">
+</head>
+<body>
+
+    <h1>Comprendre le z-index en CSS</h1>
+
+    <section class="explication">
+        <h2>1. Qu'est-ce que le z-index ?</h2>
+        <p>
+            Le <strong>z-index</strong> est une propriété CSS qui permet de gérer l'ordre 
+            d'empilement des éléments qui se superposent.
+        </p>
+        <p>
+            Plus la valeur du z-index est grande, plus l'élément sera affiché 
+            au-dessus des autres.
+        </p>
+    </section>
+
+    <section class="explication">
+        <h2>2. Condition importante ⚠</h2>
+        <p>
+            Le <strong>z-index</strong> fonctionne uniquement sur des éléments 
+            positionnés avec :
+        </p>
+        <ul>
+            <li>position: relative;</li>
+            <li>position: absolute;</li>
+            <li>position: fixed;</li>
+            <li>position: sticky;</li>
+        </ul>
+    </section>
+
+    <section class="demo">
+        <h2>3. Exemple visuel</h2>
+        <p>Voici trois blocs superposés :</p>
+
+        <div class="container">
+            <div class="box box1">z-index: 1</div>
+            <div class="box box2">z-index: 2</div>
+            <div class="box box3">z-index: 3</div>
+        </div>
+    </section>
+
+    <section class="explication">
+        <h2>4. Code utilisé</h2>
+        <pre>
+.box1 { z-index: 1; }
+.box2 { z-index: 2; }
+.box3 { z-index: 3; }
+        </pre>
+    </section>
+
+</body>
+</html>

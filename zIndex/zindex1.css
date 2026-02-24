@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f6f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.explication {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.demo {
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    height: 200px;
+    margin-top: 30px;
+}
+
+/* Style commun aux boîtes */
+.box {
+    width: 150px;
+    height: 150px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 8px;
+}
+
+/* Chaque boîte a une position légèrement décalée */
+.box1 {
+    background-color: #e74c3c;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+.box2 {
+    background-color: #3498db;
+    top: 40px;
+    left: 60px;
+    z-index: 2;
+}
+
+.box3 {
+    background-color: #2ecc71;
+    top: 60px;
+    left: 100px;
+    z-index: 3;
+}
+
+pre {
+    background-color: #2d3436;
+    color: #ecf0f1;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+}

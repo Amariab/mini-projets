@@ -1,0 +1,26 @@
+.conteneur {
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+
+.une {
+    background-color: #C2B0F9;
+    position: absolute;
+    left: 0;
+    top: 90px;
+}
+
+.deux {
+    background-color: #CBFCB9;
+    position: absolute;
+    right: 70px;
+    top: 0;
+}
+
+.trois {
+    background-color: #F2A3BB;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+}

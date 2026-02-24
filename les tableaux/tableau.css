@@ -1,0 +1,15 @@
+td, th {
+    border: 1px solid black;
+    padding: 10px;
+}
+table {
+    /* Permet de fusionner les bordures des cellules pour éviter les doubles bordures */
+    /* separate (par défaut) : les bordures des cellules sont séparées, ce qui peut entraîner des doubles bordures */
+    border-collapse: collapse;
+    /* Permet de centrer le tableau horizontalement dans son conteneur */
+    margin:auto
+}
+
+caption{
+    caption-side: bottom;
+}
