@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+
+<html lang="fr">
+
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Permet un affichage adapté aux écrans mobiles -->
+
+    <link rel="stylesheet" href="formulaire.css">
+
+    <title>Apprendre à créer un formulaire</title>
+</head>
+
+<body>
+
+    <h1>Comment construire un formulaire HTML</h1>
+
+    <p>
+        Un formulaire permet de récupérer des informations saisies par un utilisateur.
+        Il est encadré par la balise <strong>&lt;form&gt;</strong>.
+        Cette balise contient plusieurs champs de saisie appelés <strong>inputs</strong>.
+    </p>
+
+    <!-- Début du formulaire -->
+    <form method="get" action="">
+        <!-- 
+            method="get" : les données sont envoyées dans l’URL
+            action="" : page vers laquelle les données seront envoyées
+        -->
+
+        <fieldset>
+            <legend>Informations personnelles</legend>
+            <!-- fieldset regroupe des champs logiquement -->
+            <!-- legend donne un titre au groupe -->
+
+            <p>
+                <label for="prenom">Votre prénom :</label>
+                <!-- label : texte descriptif associé à un champ -->
+                <!-- for="prenom" relie le label à l'id du champ -->
+
+                <input type="text" name="prenom" id="prenom" placeholder="Ex : Mathieu" size="30" maxlength="20"
+                    required>
+                <!--
+                    type="text" : champ texte simple
+                    name : nom de la donnée envoyée
+                    id : identifiant unique
+                    placeholder : texte d’aide affiché dans le champ
+                    size : largeur approximative
+                    maxlength : nombre maximum de caractères
+                    required : champ obligatoire
+                -->
+            </p>
+
+            <p>
+                <label for="email">Votre email :</label>
+                <input type="email" name="email" id="email" required>
+                <!-- type="email" vérifie automatiquement le format -->
+            </p>
+
+            <p>
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" name="telephone" id="telephone">
+                <!-- type="tel" adapté aux claviers mobiles -->
+            </p>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Votre avis</legend>
+
+            <p>
+                <label for="ameliorer">Des conseils pour améliorer mon site ?</label><br>
+                <textarea name="ameliorer" id="ameliorer" rows="4" cols="40"></textarea>
+                <!-- textarea : zone de texte multilignes -->
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Informations complémentaires</legend>
+
+            <p>
+                <label>Date de naissance :</label>
+                <input type="date" name="date_naissance">
+                <!-- type="date" affiche un calendrier -->
+            </p>
+
+            <p>
+                <label>Votre âge :</label>
+                <input type="number" name="age" min="1" max="120">
+                <!-- type="number" limite la saisie à des chiffres -->
+            </p>
+
+            <p>
+                <label>Niveau de satisfaction :</label>
+                <input type="range" name="satisfaction" min="0" max="10">
+                <!-- type="range" crée un curseur -->
+            </p>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Choix multiples</legend>
+
+            <p>
+                Tranche d’âge :<br>
+
+                <input type="radio" name="age_group" value="moins15" id="moins15">
+                <label for="moins15">Moins de 15 ans</label><br>
+
+                <input type="radio" name="age_group" value="15-25" id="15-25">
+                <label for="15-25">15-25 ans</label><br>
+
+                <input type="radio" name="age_group" value="25-40" id="25-40">
+                <label for="25-40">25-40 ans</label><br>
+
+                <input type="radio" name="age_group" value="plus40" id="plus40">
+                <label for="plus40">Plus de 40 ans</label>
+
+                <!-- 
+                    type="radio" : permet un seul choix possible
+                    même "name" = un seul choix sélectionnable
+                -->
+            </p>
+
+            <p>
+                <!-- Case à cocher : permet d'accepter ou refuser une option -->
+                <input type="checkbox" name="newsletter" id="newsletter" value="oui">
+
+                <!-- 
+        type="checkbox" : crée une case à cocher
+        name="newsletter" : nom de la donnée envoyée au serveur
+        id="newsletter" : identifiant unique pour relier le label
+        value="oui" : valeur transmise si la case est cochée
+    -->
+
+                <label for="newsletter">
+                    Je souhaite recevoir la newsletter
+                </label>
+                <!-- 
+        Le label améliore l’accessibilité :
+        - Cliquer sur le texte coche/décoche la case
+        - Améliore l’ergonomie et l’accessibilité (lecteurs d’écran)
+    -->
+            </p>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Localisation</legend>
+
+            <label for="pays">Dans quel pays habitez-vous ?</label><br>
+
+            <select name="pays" id="pays">
+                <!-- select crée un menu déroulant -->
+                <option value="espagne">Espagne</option>
+                <option value="royaume-uni">Royaume-Uni</option>
+                <option value="canada" selected>Canada</option>
+                <option value="japon">Japon</option>
+                <!-- selected : valeur choisie par défaut -->
+            </select>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Envoyer le formulaire">
+            <!-- Bouton d’envoi -->
+        </p>
+
+    </form>
+    <!-- Fin du formulaire -->
+
+</body>
+
+</html>

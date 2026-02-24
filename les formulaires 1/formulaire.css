@@ -1,0 +1,116 @@
+/* 
+====================================
+STYLE GENERAL DE LA PAGE
+====================================
+*/
+
+/* On applique un style de base à tout le document */
+body {
+    font-family: Arial, sans-serif; /* Police simple et lisible */
+    background-color: #f4f6f9;      /* Couleur de fond douce */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Titre principal */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+
+/* 
+====================================
+STYLE DU FORMULAIRE
+====================================
+*/
+
+form {
+    background-color: white;       /* Fond blanc pour le formulaire */
+    padding: 20px;                 /* Espace intérieur */
+    border-radius: 10px;           /* Coins arrondis */
+    max-width: 600px;              /* Largeur maximale */
+    margin: auto;                  /* Centre le formulaire */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Ombre légère */
+}
+
+
+/* 
+====================================
+GROUPES DE CHAMPS
+====================================
+*/
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+/* Titre des groupes */
+legend {
+    font-weight: bold;
+    color: #3498db;
+}
+
+
+/* 
+====================================
+CHAMPS DE SAISIE
+====================================
+*/
+
+/* Style commun aux champs texte */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;            /* Prend toute la largeur disponible */
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Inclut padding dans la largeur */
+}
+
+/* Style spécifique au textarea */
+textarea {
+    resize: vertical; /* Permet seulement redimensionnement vertical */
+}
+
+/* 
+====================================
+BOUTON
+====================================
+*/
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Change le curseur en main */
+    font-size: 16px;
+}
+
+/* Effet au survol */
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+
+/* 
+====================================
+AMELIORATION VISUELLE
+====================================
+*/
+
+/* Espacement entre les paragraphes */
+p {
+    margin-bottom: 15px;
+}
