@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Comprendre les Media Queries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Ici on demande a ce que le "viewport" du navigateur, c’est à dire la surface d’affichage du navigateur s’adapte 
+    à la largeur d’affichage de l’appareil. Cela permet notamment un affichage correct sur nos téléphones mobiles.-->
+    <link rel="stylesheet" href="mediaQueries.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Comprendre les Media Queries en CSS</h1>
+    </header>
+
+    <section>
+        <h2>Qu'est-ce qu'une Media Query ?</h2>
+        <p>
+            Une media query est une fonctionnalité du CSS3 qui permet d’adapter
+            le style d’un site web en fonction de la taille de l’écran.
+            Elle est essentielle pour créer un site responsive, c’est-à-dire
+            un site qui s’adapte automatiquement aux smartphones,
+            aux tablettes et aux ordinateurs.
+        </p>
+
+        <p>
+            Grâce aux media queries, on peut modifier la disposition,
+            la taille du texte, les couleurs ou encore la structure
+            de la page selon la largeur de l’écran.
+        </p>
+    </section>
+
+    <section>
+        <h2>Affichage sur Smartphone 📱</h2>
+        <p>
+            Sur un smartphone, l’écran est petit. On privilégie donc
+            une disposition verticale avec des blocs qui prennent
+            toute la largeur de l’écran. Le texte est légèrement
+            agrandi pour être lisible facilement.
+        </p>
+        <p>
+            Dans le fichier CSS, on utilise généralement :
+            <code>@media (max-width: 600px)</code>
+            pour cibler les petits écrans.
+        </p>
+    </section>
+
+    <section>
+        <h2>Affichage sur Tablette 📱</h2>
+        <p>
+            Une tablette possède un écran plus large qu’un smartphone.
+            On peut commencer à afficher des éléments côte à côte,
+            par exemple en utilisant Flexbox.
+        </p>
+        <p>
+            On utilise souvent :
+            <code>@media (min-width: 601px) and (max-width: 1024px)</code>
+            pour cibler les tablettes.
+        </p>
+    </section>
+
+    <section>
+        <h2>Affichage sur PC 💻</h2>
+        <p>
+            Sur un ordinateur, l’espace est plus important.
+            On peut afficher plusieurs colonnes, réduire la taille
+            des marges relatives et organiser le contenu
+            de manière plus complexe.
+        </p>
+        <p>
+            On utilise généralement :
+            <code>@media (min-width: 1025px)</code>
+            pour les écrans larges.
+        </p>
+    </section>
+
+    <footer>
+        <p>Exemple pédagogique sur les Media Queries</p>
+    </footer>
+
+</body>
+
+</html>
