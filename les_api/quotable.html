@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citation</title>
+</head>
+<body>
+
+    <button onclick="getQuote()">Nouvelle citation</button>
+    <p id="quote">Clique sur le bouton 👆</p>
+
+    <script>
+        async function getQuote() {
+            try {
+                const response = await fetch("https://api.adviceslip.com/advice");
+                const data = await response.json();
+
+                document.getElementById("quote").innerText =
+                    data.slip.advice;
+
+            } catch (error) {
+                document.getElementById("quote").innerText =
+                    "Erreur lors du chargement.";
+                console.error(error);
+            }
+        }
+    </script>
+
+</body>
+</html>

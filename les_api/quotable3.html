@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citation française</title>
+</head>
+<body>
+
+    <!--getQuote pour le lier à sa fonction-->
+    <button onclick="getQuote()">Nouvelle citation</button>
+    <!--id quote pour le lier à sa fonction-->
+    <p id="quote">Clique sur le bouton</p>
+
+    <script>
+        /**
+         * Fonction asynchrone pour obtenir une citation aléatoire
+         * fetch(...) → envoie une requête HTTP à l’API et retourne une promesse qui contient la réponse.
+         * await → attend que la promesse soit résolue avant de continuer.
+         * response.json() → lit la réponse HTTP et convertit le JSON reçu en objet JavaScript.
+         * const result = ... → stocke cet objet dans la variable result.
+         * Donc après ces lignes, result contient l’objet JavaScript renvoyé par l’API, pas juste du texte.
+         */
+        async function getQuote() {
+            try {
+                // Appel à l'API pour obtenir une citation aléatoire
+                // await pour attendre la réponse de l'API avant de continuer
+                const response = await fetch(
+                    "https://citation.lecog.fr/public/api/random-quote.php"
+                );
+                const result = await response.json();
+
+                // Vérifier que tout s'est bien passé
+                if (result.success) {
+                    const quote = result.data;
+
+                    /**
+                     * Affichage de la citation dans le paragraphe avec id "quote"
+                     * document.getElementById("quote") → sélectionne le <p> où tu veux afficher le texte.
+                     * .innerText = ... → remplace ce texte par la citation et l’auteur formatés avec les backticks.
+                     * 
+                     * ${quote.text} → insère le texte de la citation.
+                     * ${quote.author.forename} ${quote.author.name} → insère le prénom et le nom de l’auteur.
+                     */
+
+                    document.getElementById("quote").innerText =
+                        `"${quote.text}" — ${quote.author.forename} ${quote.author.name}`;
+                } else {
+                    document.getElementById("quote").innerText =
+                        "Aucune citation trouvée.";
+                }
+            } catch (error) {
+                document.getElementById("quote").innerText =
+                    "Erreur lors du chargement.";
+                console.error("Erreur :", error);
+            }
+        }
+    </script>
+
+</body>
+</html>

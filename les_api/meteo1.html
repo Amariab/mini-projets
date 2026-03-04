@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo Paris</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #weather {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Météo à Paris</h1>
+    <button onclick="getWeather()">Afficher la météo</button>
+    <div id="weather">Clique sur le bouton pour voir la météo</div>
+
+    <script>
+        function getWeather() {
+            const apiKey = "7be5f643bb24c412d8caa64af2e235f5"; // clé récupérée sur OpenWeatherMap
+            const city = "Paris";
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`)
+                .then(res => {
+                    if (!res.ok) throw new Error("Erreur réseau");
+                    return res.json();
+                })
+                .then(data => {
+                    // data contient toutes les informations météo
+                    console.log(data); // pour debug
+
+                    const temp = data.main.temp; // température
+                    const desc = data.weather[0].description; // description
+                    const humidity = data.main.humidity; // humidité
+
+                    document.getElementById("weather").innerText =
+                        `Il fait ${temp}°C à ${city}, ${desc}. Humidité : ${humidity}%`;
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById("weather").innerText =
+                        "Impossible de récupérer la météo.";
+                });
+        }
+    </script>
+
+</body>
+</html>

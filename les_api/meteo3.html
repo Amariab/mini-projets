@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte météo Paris</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #4a90e2, #50a0e2);
+            transition: background 1s ease;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px 40px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            width: 90%;
+        }
+
+        .card h1 {
+            margin: 0 0 15px 0;
+            font-size: 1.5em;
+        }
+
+        .weather-icon {
+            width: 100px;
+            height: 100px;
+            margin: 10px 0;
+        }
+
+        #weather-text {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Météo à Paris</h1>
+        <img id="icon" class="weather-icon" src="" alt="Icône météo">
+        <div id="weather-text">Clique sur le bouton pour voir la météo</div>
+        <button onclick="getWeather()">Afficher la météo</button>
+    </div>
+
+    <script>
+        function getWeather() {
+            const apiKey = "7be5f643bb24c412d8caa64af2e235f5";
+
+            const city = "Paris";
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`)
+                .then(res => {
+                    if (!res.ok) throw new Error(`Erreur HTTP ${res.status}`);
+                    return res.json();
+                })
+                .then(data => {
+                    const temp = data.main.temp.toFixed(1);
+                    const desc = data.weather[0].description;
+                    const humidity = data.main.humidity;
+                    const iconCode = data.weather[0].icon;
+
+                    document.getElementById("weather-text").innerText =
+                        `Il fait ${temp}°C, ${desc}. Humidité : ${humidity}%`;
+
+                    document.getElementById("icon").src =
+                        `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+                    document.getElementById("icon").alt = desc;
+
+                    // Dégradé de fond selon météo
+                    let bgGradient = "linear-gradient(to bottom, #4a90e2, #50a0e2)"; // default ciel bleu
+                    if (iconCode.includes("n")) bgGradient = "linear-gradient(to bottom, #2c3e50, #34495e)"; // nuit
+                    else if (iconCode.startsWith("01")) bgGradient = "linear-gradient(to bottom, #f39c12, #f1c40f)"; // clair
+                    else if (iconCode.startsWith("02") || iconCode.startsWith("03") || iconCode.startsWith("04")) bgGradient = "linear-gradient(to bottom, #95a5a6, #7f8c8d)"; // nuage
+                    else if (iconCode.startsWith("09") || iconCode.startsWith("10")) bgGradient = "linear-gradient(to bottom, #3498db, #2980b9)"; // pluie
+                    else if (iconCode.startsWith("11")) bgGradient = "linear-gradient(to bottom, #34495e, #2c3e50)"; // orage
+                    else if (iconCode.startsWith("13")) bgGradient = "linear-gradient(to bottom, #ecf0f1, #bdc3c7)"; // neige
+
+                    document.body.style.background = bgGradient;
+
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById("weather-text").innerText = "Impossible de récupérer la météo.";
+                    document.getElementById("icon").src = "";
+                    document.body.style.background = "linear-gradient(to bottom, #7f8c8d, #95a5a6)";
+                });
+        }
+    </script>
+
+</body>
+
+</html>
