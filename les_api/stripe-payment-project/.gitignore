@@ -1,0 +1,47 @@
+# ================================
+# Dossiers de dépendances
+# ================================
+/vendor/
+node_modules/
+
+# ================================
+# Fichiers temporaires / cache
+# ================================
+*.log
+*.cache
+*.tmp
+*.bak
+*.swp
+~$*       # fichiers temporaires Windows (Word, Excel, etc.)
+Thumbs.db
+.DS_Store
+
+# ================================
+# Configuration locale / secrets
+# ================================
+.env
+.env.local
+.env.*.local
+les_api/stripe-payment-project/vendor/stripe/stripe-php/README.md
+
+# ================================
+# IDE / éditeurs
+# ================================
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# ================================
+# Build / outputs
+# ================================
+/dist/
+/build/
+/public/build/
+
+# ================================
+# OS spécifiques
+# ================================
+.DS_Store
+Thumbs.db
+ehthumbs.db

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple de Tableau Complet</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Pour éviter les doubles bordures */
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: left;
+        }
+        thead {
+            background-color: #f2f2f2;
+        }
+        tfoot {
+            background-color: #eee;
+            font-weight: bold;
+        }
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <caption>Rapport des ventes mensuelles</caption>
+
+        <thead>
+            <tr>
+                <th>Catégorie</th>
+                <th>Produit</th>
+                <th>Quantité</th>
+                <th>Prix Unitaire</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="2">Électronique</td>
+                <td>Smartphone Alpha</td>
+                <td>10</td>
+                <td>500€</td>
+                <td>5000€</td>
+            </tr>
+            <tr>
+                <td>Tablette Beta</td>
+                <td>5</td>
+                <td>300€</td>
+                <td>1500€</td>
+            </tr>
+            <tr>
+                <td>Accessoires</td>
+                <td>Coque Protectrice</td>
+                <td>20</td>
+                <td>25€</td>
+                <td>500€</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="4" style="text-align: right;">Grand Total :</td>
+                <td>7000€</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

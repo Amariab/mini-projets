@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Paiement Stripe</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Lien vers une feuille de style CSS externe. -->
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <!--
+    Charge la bibliothèque JavaScript officielle de Stripe (Stripe.js).
+    Cette bibliothèque permet de communiquer avec Stripe côté navigateur
+    pour créer et confirmer les paiements de manière sécurisée.
+    
+    Stripe.js est nécessaire pour :
+    - créer un objet Stripe
+    - utiliser les éléments de paiement Stripe
+    - confirmer un paiement avec le client_secret
+    -->
+</head>
+
+<body>
+    <div class="container">
+        
+        <h1>Paiement sécurisé</h1>
+        <p>Montant : 20 €</p>
+
+        <button id="payBtn">
+            Payer maintenant
+        </button>
+        <!--
+        Bouton permettant de lancer le paiement.
+
+        L'attribut id="payBtn" permet au JavaScript
+        de sélectionner ce bouton afin d'ajouter un événement
+        (par exemple : lorsqu'on clique, déclencher le paiement).
+        -->
+
+        <div id="result"></div>
+        <!--
+        Zone qui servira à afficher le résultat du paiement.
+
+        Le JavaScript pourra modifier le contenu de cette div
+        pour afficher un message comme :
+        - "Paiement réussi"
+        - "Erreur de paiement"
+        -->
+
+    </div>
+
+    <script src="script.js"></script>
+    <!--
+    Chargement du fichier JavaScript principal du projet.
+
+    Ce script va :
+    - écouter le clic sur le bouton "Payer maintenant"
+    - envoyer une requête au backend (create-payment.php)
+    - récupérer le client_secret
+    - confirmer le paiement avec Stripe.
+    -->
+
+</body>
+
+</html>
